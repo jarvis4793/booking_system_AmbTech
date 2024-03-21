@@ -1,11 +1,11 @@
 import { View, Text } from "react-native";
 
-function UserBooking() {
+function BookingDetail() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>UserBookingPage</Text>
+      <Text>BookingDetail</Text>
     </View>
   );
 }
 
-export default UserBooking;
+export default BookingDetail;
