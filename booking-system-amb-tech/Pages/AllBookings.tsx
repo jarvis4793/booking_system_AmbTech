@@ -24,7 +24,7 @@ function AllBookings({ navigation }: any) {
 
     return (
         <ScrollView>
-            <View className="flex flex-row flex-wrap">
+            <View className="flex flex-row flex-wrap justify-center">
                 {bookingData?.map((bookingData: Booking) => (
                     <Card key={bookingData.bookingid} bookingid={bookingData.bookingid} />
                 ))}
