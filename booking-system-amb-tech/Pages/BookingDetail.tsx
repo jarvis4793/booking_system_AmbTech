@@ -15,20 +15,20 @@ function BookingDetail({ route }) {
   });
   console.log(bookingData);
   return (
-    <View>
-      <Text>Booking Id: {route.params.booking}</Text>
-      <Text>First name: {bookingData.firstname}</Text>
-      <Text>Last name: {bookingData.lastname}</Text>
-      <Text>Total Price: {bookingData.totalprice}</Text>
+    <View className="flex-1 bg-white">
+      <Text className="text-2xl">Booking Id: {route.params.booking}</Text>
+      <Text className="text-2xl">First name: {bookingData?.firstname}</Text>
+      <Text className="text-2xl">Last name: {bookingData?.lastname}</Text>
+      <Text className="text-2xl">Total Price: {bookingData?.totalprice}</Text>
       <View>
-        <Text>Booking Dates:</Text>
+        <Text className="text-2xl">Booking Dates:</Text>
         <View>
-          <Text>checkin: {bookingData.bookingdates.checkin}</Text>
-          <Text>checkout: {bookingData.bookingdates.checkout}</Text>
+          <Text className="text-xl">checkin: {bookingData?.bookingdates.checkin}</Text>
+          <Text className="text-xl">checkout: {bookingData?.bookingdates.checkout}</Text>
         </View>
       </View>
-      <Text>Deposit paid: {bookingData.depositpaid.toString()}</Text>
-      <Text>Additional needs: {bookingData.additionalneeds}</Text>
+      <Text className="text-2xl">Deposit paid: {bookingData?.depositpaid.toString()}</Text>
+      <Text className="text-2xl">Additional needs: {bookingData?.additionalneeds}</Text>
     </View>
   );
 }

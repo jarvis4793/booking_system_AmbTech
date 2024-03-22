@@ -25,12 +25,12 @@ const AllBookingsPageGroup = () => {
       <Stack.Screen
         name="Booking Detail"
         component={BookingDetail}
-        // options={{
-        //     headerStyle: {
-        //         backgroundColor: '#292259',
-        //     },
-        //     headerTintColor: '#f17696',
-        // }}
+        options={{
+          // headerStyle: {
+          //     backgroundColor: '#292259',
+          // },
+          // headerTintColor: '#f17696',
+        }}
       />
     </Stack.Navigator>
   );
