@@ -3,7 +3,11 @@
 const globSync = require("glob").sync;
 
 module.exports = {
-  content: ["./App.tsx", ...globSync("./pages/**/*.{js,jsx,ts,tsx}"), ...globSync("./components/**/*.{js,jsx,ts,tsx}")],
+  content: [
+    "./App.tsx",
+    ...globSync("./pages/**/*.{js,jsx,ts,tsx}"),
+    ...globSync("./components/**/*.{js,jsx,ts,tsx}"),
+  ],
   theme: {
     extend: {},
   },
