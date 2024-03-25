@@ -1,13 +1,15 @@
 type Booking = {
-  bookingid: Number;
+  bookingid: number;
 };
 
 type BookingDetails = {
-  firstname: string,	
-  lastname: string,	
-  totalprice: number,	
-  depositpaid: boolean,	
-  checkin: Date,
-  checkout:	Date,	
-  additionalneeds: string	
+  firstname: string,
+  lastname: string,
+  totalprice: number,
+  depositpaid: boolean,
+  bookingdates: {
+    checkin: Date,
+    checkout: Date
+  },
+  additionalneeds: string
 }

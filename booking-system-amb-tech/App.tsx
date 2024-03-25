@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BookingDetail from "./pages/BookingDetail";
 import AllBookings from "./pages/AllBookings";
+import UserBookingDetail from "./pages/UserBookingDetail";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -18,9 +19,9 @@ const AllBookingsPageGroup = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="All Booking"
+        name="All Bookings list"
         component={AllBookings}
-        options={{ headerShown: false }}
+      // options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Booking Detail"
@@ -36,16 +37,41 @@ const AllBookingsPageGroup = () => {
   );
 };
 
+const UserBookingsPageGroup = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="User Bookings list"
+        component={UserBooking}
+      // options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="User Booking Detail"
+        component={UserBookingDetail}
+        options={{
+          // headerStyle: {
+          //     backgroundColor: '#292259',
+          // },
+          // headerTintColor: '#f17696',
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+
+
 export const queryClient = new QueryClient();
 
 export default function App() {
   return (
+
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <NavigationContainer>
           <Tab.Navigator>
-            <Tab.Screen name="User Booking" component={UserBooking} />
-            <Tab.Screen name="All Bookings" component={AllBookingsPageGroup} />
+            <Tab.Screen name="All User Bookings" component={UserBookingsPageGroup} options={{ headerShown: false }} />
+            <Tab.Screen name="All Bookings" component={AllBookingsPageGroup} options={{ headerShown: false }} />
             <Tab.Screen name="User Profile" component={UserProfile} />
             <Tab.Screen name="Create Booking" component={CreateBooking} />
           </Tab.Navigator>
