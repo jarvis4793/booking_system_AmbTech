@@ -16,7 +16,6 @@ function AllBookings({ navigation }: any) {
     queryFn: async ({ queryKey }) =>
       await fetchPublic(queryKey[0], queryKey[1]),
   });
-  console.log(allBookingsData);
 
   return (
     <ScrollView>

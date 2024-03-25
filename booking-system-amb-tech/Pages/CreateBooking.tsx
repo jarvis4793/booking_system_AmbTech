@@ -59,6 +59,11 @@ function CreateBooking() {
                     checkin: date,
                   }
                 })
+                if (date > newBooking.bookingdates.checkout) {
+                  console.log("no")
+                } else {
+                  console.log("yes")
+                }
               }} />
               <Text className="text-2xl m-2">Check Out: </Text>
               <RNDateTimePicker mode="date" display="spinner" value={new Date("2019-01-01")} onChange={(event: DateTimePickerEvent, date: Date) => {
@@ -91,8 +96,12 @@ function CreateBooking() {
                   color={'#FFFFFF'}
                   title="Submit"
                   onPress={async () => {
-                    const result = await fetchPublic("booking", "post", newBooking)
-                    Alert.alert(`New booking id: ${result.bookingid}`)
+                    if (newBooking.bookingdates.checkin > newBooking.bookingdates.checkout) {
+                      Alert.alert(`Checkin date has to be earlier than checkout date`)
+                    } else {
+                      const result = await fetchPublic("booking", "post", newBooking)
+                      Alert.alert(`New booking id: ${result.bookingid}`)
+                    }
                   }
                   }
                 />
