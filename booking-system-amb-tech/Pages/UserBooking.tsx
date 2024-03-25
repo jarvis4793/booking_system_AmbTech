@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { View, Text, ScrollView, StyleSheet, Pressable, Modal, Alert } from "react-native";
+import { View, Text, ScrollView, Pressable } from "react-native";
 import { fetchPublic } from "../api/fetch";
 import { useSelector } from "react-redux";
 import { UserState } from "../store/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useIsFocused } from "@react-navigation/native";
 import Card from "../components/Card";
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View, Text, TextInput, Button, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, Platform, Keyboard, Alert, Switch } from "react-native";
 import { useSelector } from "react-redux";
 import { UserState } from "../store/store";
-import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
+import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import RNDateTimePicker from "@react-native-community/datetimepicker";
 import { fetchPublic } from "../api/fetch";
 
@@ -52,7 +52,6 @@ function CreateBooking() {
             <View>
               <Text className="text-2xl m-2">Check In: </Text>
               <RNDateTimePicker mode="date" display="spinner" value={new Date("2018-01-01")} onChange={(event: DateTimePickerEvent, date: Date) => {
-                // console.log(date.toISOString().split('T')[0])
                 setNewBooking({
                   ...newBooking, bookingdates: {
                     ...newBooking.bookingdates,
@@ -67,7 +66,6 @@ function CreateBooking() {
               }} />
               <Text className="text-2xl m-2">Check Out: </Text>
               <RNDateTimePicker mode="date" display="spinner" value={new Date("2019-01-01")} onChange={(event: DateTimePickerEvent, date: Date) => {
-                // console.log(date.toISOString().split('T')[0])
                 setNewBooking({
                   ...newBooking, bookingdates: {
                     ...newBooking.bookingdates,

@@ -21,17 +21,10 @@ const AllBookingsPageGroup = () => {
       <Stack.Screen
         name="All Bookings list"
         component={AllBookings}
-      // options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Booking Detail"
         component={BookingDetail}
-        options={{
-          // headerStyle: {
-          //     backgroundColor: '#292259',
-          // },
-          // headerTintColor: '#f17696',
-        }}
       />
     </Stack.Navigator>
   );
@@ -43,17 +36,10 @@ const UserBookingsPageGroup = () => {
       <Stack.Screen
         name="User Bookings list"
         component={UserBooking}
-      // options={{ headerShown: false }}
       />
       <Stack.Screen
         name="User Booking Detail"
         component={UserBookingDetail}
-        options={{
-          // headerStyle: {
-          //     backgroundColor: '#292259',
-          // },
-          // headerTintColor: '#f17696',
-        }}
       />
     </Stack.Navigator>
   );

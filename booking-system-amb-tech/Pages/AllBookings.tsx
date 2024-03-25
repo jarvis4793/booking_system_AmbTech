@@ -1,11 +1,12 @@
-import { View, Text, Pressable, ScrollView } from "react-native";
+import { View, Pressable, ScrollView } from "react-native";
 import { fetchPublic } from "../api/fetch";
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
-// import { useIsFocused } from "@react-navigation/native";
 import Card from "../components/Card";
+import { useIsFocused } from "@react-navigation/native";
 
 function AllBookings({ navigation }: any) {
+  const isFocused = useIsFocused();
   const {
     data: allBookingsData,
     isLoading: isAllBookingsData,
@@ -16,6 +17,10 @@ function AllBookings({ navigation }: any) {
     queryFn: async ({ queryKey }) =>
       await fetchPublic(queryKey[0], queryKey[1]),
   });
+
+  useEffect(() => {
+    refetch()
+  }, [allBookingsData, isFocused])
 
   return (
     <ScrollView>
