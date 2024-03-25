@@ -53,12 +53,22 @@ function CreateBooking() {
               <Text className="text-2xl m-2">Check In: </Text>
               <RNDateTimePicker mode="date" display="spinner" value={new Date("2018-01-01")} onChange={(event: DateTimePickerEvent, date: Date) => {
                 // console.log(date.toISOString().split('T')[0])
-                setNewBooking({ ...newBooking, checkin: date })
+                setNewBooking({
+                  ...newBooking, bookingdates: {
+                    ...newBooking.bookingdates,
+                    checkin: date,
+                  }
+                })
               }} />
               <Text className="text-2xl m-2">Check Out: </Text>
               <RNDateTimePicker mode="date" display="spinner" value={new Date("2019-01-01")} onChange={(event: DateTimePickerEvent, date: Date) => {
                 // console.log(date.toISOString().split('T')[0])
-                setNewBooking({ ...newBooking, checkout: date })
+                setNewBooking({
+                  ...newBooking, bookingdates: {
+                    ...newBooking.bookingdates,
+                    checkout: date,
+                  },
+                })
               }} />
             </View>
             <View className="flex-row m-2">
