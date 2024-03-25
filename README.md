@@ -8,5 +8,5 @@ starting by (in terminal)
 
 ## Run the server of the app
 starting by (in terminal)
-Type <b>cd booking-system-amb-tech</b> to get into the application folder
+<br/>Type <b>cd booking-system-amb-tech</b> to get into the application folder
 <br/>Type <b>yarn expo start</b> to operate the server
